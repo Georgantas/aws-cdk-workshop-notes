@@ -1,5 +1,7 @@
 package com.myorg;
 
+import com.github.eladb.dynamotableviewer.TableViewer;
+
 import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.core.Stack;
 import software.amazon.awscdk.core.StackProps;
@@ -49,6 +51,10 @@ public class CdkWorkshopStack extends Stack {
         // This is a stack output that’s automatically added by the API Gateway
         // construct and includes the URL of the API Gateway endpoint.
         LambdaRestApi.Builder.create(this, "Endpoint").handler(helloWithCounter.getHandler()).build();
+
+        // Define a viewer for the HitCount table
+        TableViewer.Builder.create(this, "ViewerHitCount").title("Hello Hits").table(helloWithCounter.getTable())
+                .build();
 
         // On `cdk deploy` you’ll notice that cdk deploy not only deployed your
         // CloudFormation stack, but also archived and uploaded the lambda directory

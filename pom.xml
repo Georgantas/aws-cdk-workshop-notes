@@ -55,6 +55,12 @@
             <artifactId>dynamodb</artifactId>
             <version>1.45.0</version>
         </dependency>
+        <!-- Additional Construct Libraries -->
+        <dependency>
+            <groupId>com.github.eladb</groupId>
+            <artifactId>cdk-dynamo-table-viewer</artifactId>
+            <version>3.0.6</version>
+        </dependency>
         <!-- Default constructs from cdk default project: -->
         <!-- <dependency>
             <groupId>software.amazon.awscdk</groupId>
